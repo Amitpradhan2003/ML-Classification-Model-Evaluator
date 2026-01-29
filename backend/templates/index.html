@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Classification Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+    <h1>🤖 ML Classification Dashboard</h1>
+
+    <div class="upload-box">
+        <input type="file" id="csvFile" accept=".csv">
+
+        <select id="model">
+            <option value="decision_tree">Decision Tree</option>
+            <option value="naive_bayes">Naive Bayes</option>
+            <option value="knn">KNN</option>
+            <option value="logistic_regression">Logistic Regression</option>
+            <option value="random_forest">Random Forest</option>
+            <option value="bagging">Bagging</option>
+            <option value="svm">SVM</option>
+        </select>
+
+        <button onclick="trainModel()">Train Model</button>
+    </div>
+
+    <div id="metrics" class="metrics-grid"></div>
+
+    <div class="graph-grid">
+        <div class="graph-card">
+            <h3>📈 ROC Curve</h3>
+            <img id="rocImg">
+        </div>
+
+        <div class="graph-card">
+            <h3>🧩 Confusion Matrix</h3>
+            <img id="cmImg">
+        </div>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
